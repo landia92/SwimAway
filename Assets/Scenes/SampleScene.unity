@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 143156005}
   - component: {fileID: 143156004}
   - component: {fileID: 143156003}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single Right
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,9 +356,9 @@ GameObject:
   - component: {fileID: 739243519}
   - component: {fileID: 739243518}
   - component: {fileID: 739243517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single Left
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,9 +486,9 @@ GameObject:
   - component: {fileID: 1198915141}
   - component: {fileID: 1198915140}
   - component: {fileID: 1198915139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -616,9 +616,9 @@ GameObject:
   - component: {fileID: 1356029030}
   - component: {fileID: 1356029029}
   - component: {fileID: 1356029028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,9 +746,9 @@ GameObject:
   - component: {fileID: 1363989987}
   - component: {fileID: 1363989986}
   - component: {fileID: 1363989985}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -877,11 +877,11 @@ GameObject:
   - component: {fileID: 1670215676}
   - component: {fileID: 1670215675}
   - component: {fileID: 1670215674}
-  - component: {fileID: 1670215678}
   - component: {fileID: 1670215679}
+  - component: {fileID: 1670215680}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -946,7 +946,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 1}
   m_Direction: 0
 --- !u!212 &1670215676
 SpriteRenderer:
@@ -1015,7 +1015,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1670215678
+--- !u!114 &1670215679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670215673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b37fe28d4a13e49a2b1e50b421ec42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 3
+  jumpPower: 5
+--- !u!95 &1670215680
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -1036,20 +1050,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1670215679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670215673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b37fe28d4a13e49a2b1e50b421ec42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 3
-  jumpPower: 5
 --- !u!1 &1771005655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,9 +1061,9 @@ GameObject:
   - component: {fileID: 1771005658}
   - component: {fileID: 1771005657}
   - component: {fileID: 1771005656}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,9 +1191,9 @@ GameObject:
   - component: {fileID: 1926259327}
   - component: {fileID: 1926259326}
   - component: {fileID: 1926259325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Single
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

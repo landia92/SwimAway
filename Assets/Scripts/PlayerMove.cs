@@ -22,14 +22,17 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         //Jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump")/* && !anim.GetBool("isFloating") && !anim.GetBool("isSinking")*/)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            anim.SetBool("isFloating", true);
+            anim.SetBool("isSinking", false);
+
         }
 
+        //Stop speed
         if (Input.GetButtonUp("Horizontal"))
         {
-            //Stop speed
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
         }
 
@@ -40,7 +43,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         //Animation
-        if(Mathf.Abs(rigid.velocity.x) < 0.3)
+        if (Mathf.Abs(rigid.velocity.x) < 0.3)
         {
             anim.SetBool("isMoving", false);
         }
@@ -64,6 +67,25 @@ public class PlayerMove : MonoBehaviour
         else if (rigid.velocity.x < maxSpeed * (-1)) //Left Max Speed
         {
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+        }
+
+        //Landing platform
+        if(rigid.velocity.y < 0)
+        {
+            anim.SetBool("isFloating", false);
+            anim.SetBool("isSinking", true);
+            Debug.DrawRay(rigid.position, Vector2.down, new Color(0, 1, 0));
+            //RaycastHit2D는 물리기반이므로 Physics2D
+            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector2.down, 1, LayerMask.GetMask("Platform"));
+            //물리기반이므로 rayHit.collider
+            if (rayHit.collider != null)
+            {
+                if (rayHit.distance < 0.5f)
+                {
+                    anim.SetBool("isFloating", false);
+                    anim.SetBool("isSinking", false);
+                }
+            }
         }
     }
 }
